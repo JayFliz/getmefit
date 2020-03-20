@@ -14,7 +14,7 @@ Get Me Fit is a platform where fitness instructors can host & sell their classes
 
 ## How it works
 - Gatsby renders all unauthenticated routes as usual static pages.
-- Authenticated routes are whitelisted as client-only (`/app/*`).
+- Authenticated routes are whitelisted as client-only (`/*`).
 - Logged-out users are redirected to the login page if they attempt to visit private routes.
 - Logged-in users will see their private content.
 
