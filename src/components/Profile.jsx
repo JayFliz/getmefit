@@ -1,11 +1,25 @@
-import React from "react"
+import React, { createRef } from "react"
 import View from "./View"
 import { getUser } from "../utils/auth"
+import firebase from "gatsby-plugin-firebase"
+
 
 const Profile = () => {
+  const nameInputEl = createRef();
   const user = getUser();
-  const { displayName, email, emailVerified } = user;
-  const accessToken = user.stsTokenManager.accessToken; 
+  const { displayName, email, emailVerified, uid } = user;
+  const accessToken = user.stsTokenManager.accessToken;
+
+  // console.log('what is firebase', firebase);
+
+  // const updateName = () => {
+  //   // console.log('save this value', nameInputEl.current.value);
+  //   firebase.database()
+  //     .ref('/users/'+ uid +'/info/')
+  //     .set({
+  //       name: nameInputEl.current.value
+  //     });
+  // }
 
   return (
     <View title="Your Profile">
@@ -16,26 +30,32 @@ const Profile = () => {
             </svg>
             Members only
           </p>
-          <p className="text-gray-700 text-base">
+          <div className="text-gray-700 text-base">
             <ul>
-                <li> 
-                  <div className="text-sm"><b>Name</b>:</div> 
+                <li>
+                  <div className="text-sm"><b>Name</b>:</div>
                   <div className="pl-2 ">{`${displayName}`}</div>
                 </li>
-                <li> 
-                  <div className="text-sm"><b>Email</b>:</div> 
+                <li>
+                  <div className="text-sm"><b>Email</b>:</div>
                   <div className="pl-2 ">{`${email}`}</div>
                   </li>
-                <li> 
-                  <div className="text-sm"><b>Email Verified</b>:</div> 
+                <li>
+                  <div className="text-sm"><b>Email Verified</b>:</div>
                   <div className="pl-2 ">{`${emailVerified}`}</div>
                   </li>
-                <li> 
-                  <div className="text-sm"><b>Firebase Access Token</b>:</div> 
+                <li>
+                  <div className="text-sm"><b>Firebase Access Token</b>:</div>
                   <div className="pl-2 truncate" >{`${accessToken}`}</div>
                 </li>
+                <li>
+                  <div className="text-sm"><b>User UID</b>:</div>
+                  <div className="pl-2 truncate" >{`${uid}`}</div>
+                </li>
+              
+
             </ul>
-          </p>
+          </div>
         </div>
     </View>
   )
