@@ -7,7 +7,7 @@ import Status from "../components/Status"
 const Index = () => (
   <Layout>
     <Status />
-    <View title="Firebase Authentication Starter">
+    <View title="Get Me Fit">
       <p>
       👋 Hello There<br/>
       Group Fitness Instructor & Personal Trainer Profiles

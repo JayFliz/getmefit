@@ -1,43 +1,32 @@
 <div align="center">
-    <img src="static/gatsby-firebase-logo.png" alt="Logo" width='70%' height='auto'/>
+    <img src="static/getmefit-logo.png" alt="Logo" width='70%' height='auto'/>
 </div>
+# Get Me Fit
+Get Me Fit is a platform where fitness instructors can host & sell their classes live & online to support people isolating at home
 
-# Gatsby Firebase Authentication Starter
+## Stack
+- [Gatsby](https://www.gatsbyjs.org)
+- [Firebase](https://firebase.google.com/)
+- [Stripe Connect](https://stripe.com/gb/connect)
+- [Tailwind](https://tailwindcss.com/) -- Up for discussion
 
-This is a gatsby starter to show how an **authentication workflow** is implemented in Gatsby using [Firebase](https://firebase.google.com/) as authentication provider.
 
-🚀 Here a [live demo](https://gatsby-firebase-simple-auth.netlify.com/) of the site.
-
-This starter follows the best practices described in the official gatsby site: 
-* [Client-only Routes](https://www.gatsbyjs.org/docs/client-only-routes-and-user-authentication/) doc
-* [User Authentication](https://www.gatsbyjs.org/tutorial/authentication-tutorial/) tutorial
-
-It uses [Gatsby Plugin Firebase](https://www.gatsbyjs.org/packages/gatsby-plugin-firebase/) to import and set firebase SDK, and [Gatsby Plugin Create Client Path](https://www.gatsbyjs.org/packages/gatsby-plugin-create-client-paths) to set private routes.
-
-How it works in short:
+## How it works
 - Gatsby renders all unauthenticated routes as usual static pages.
-- Authenticated routes are whitelisted as client-only (in this starter all dynamic pages are under the path 'mysite.com/app/*').
+- Authenticated routes are whitelisted as client-only (`/app/*`).
 - Logged-out users are redirected to the login page if they attempt to visit private routes.
 - Logged-in users will see their private content.
 
-# Getting Started
+## Getting Started
 
-Create the `.env.development` and `.env.production` file in your root directory:
+1. Create the `.env` by copying `.env.example`
+2. Fill in correct Enviroment Details (Firebase)
+2. run `npm install`
+4. run `gatsby develop`
 
-```
-GATSBY_FIREBASE_API_KEY=<YOUR_FIREBASE_API_KEY>
-GATSBY_FIREBASE_AUTH_DOMAIN=<YOUR_FIREBASE_AUTH_DOMAIN>
-GATSBY_FIREBASE_DATABASE_URL=<YOUR_FIREBASE_DATABASE_URL>
-GATSBY_FIREBASE_PROJECT_ID=<YOUR_FIREBASE_PROJECT_ID>
-GATSBY_FIREBASE_STORAGE_BUCKET=<YOUR_FIREBASE_STORAGE_BUCKET>
-GATSBY_FIREBASE_MESSAGING_SENDER_ID=<YOUR_FIREBASE_MESSAGING_SENDER_ID>
-GATSBY_FIREBASE_APP_ID=<YOUR_FIREBASE_APP_ID>
-GATSBY_FIREBASE_MEASUREMENT_ID=<YOUR_FIREBASE_ANALYTICS_TRACKING_ID>
-```
+## Production
+The production version is hosted on Netlify. Whenever a new PR get's merged into master Netlify will rebuild by running `gatsby build`. Production enviroment variables have also been added to Netlify
 
-and then:
-
-```
-npm install
-gatsby develop 
-```
+## Extra Reads
+- [Client-only Routes](https://www.gatsbyjs.org/docs/client-only-routes-and-user-authentication/) are being used for authentication
+- [Gatsby Plugin Firebase](https://www.gatsbyjs.org/packages/gatsby-plugin-firebase/)  is being used to import and set the firebase SDK
