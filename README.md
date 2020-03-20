@@ -1,6 +1,7 @@
 <div align="center">
-    <img src="static/getmefit-logo.png" alt="Logo" width='70%' height='auto'/>
+    <img src="static/getmefit-logo.png" alt="Logo" width='100px' margin height='auto'/>
 </div>
+
 # Get Me Fit
 Get Me Fit is a platform where fitness instructors can host & sell their classes live & online to support people isolating at home
 
