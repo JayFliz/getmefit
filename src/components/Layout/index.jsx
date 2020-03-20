@@ -9,7 +9,7 @@ import styles from "./main.module.css"
 
 const Layout = ({ children }) => (
   <div>
-    <Helmet title="Gatsby Simple Firebase Authentication" />
+    <Helmet title="GetMeFit" />
     <Header />
     <main className={styles.main}>{children}</main>
   </div>

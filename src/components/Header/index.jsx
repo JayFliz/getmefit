@@ -4,13 +4,13 @@ import { Link } from "gatsby"
 const Header = () => (
   <nav class="w-full flex items-center justify-between bg-blue-700 p-6">
     <div class="items-center w-1/2 text-white mr-6 text-center">
-      <span class="font-semibold text-xl">Gatsby Firebase Auth</span>
+      <span class="font-semibold text-xl">Get Me Fit Beta</span>
     </div>
     <div class="w-1/2 mt-1 text-md flex flex-row-reverse">
       <Link to="/app/profile">
         <a class="block text-white hover:text-grey-500 mr-4">
           Profile
-        </a>        
+        </a>
       </Link>
       <Link to="/">
         <a class="block text-white hover:text-grey-500 mr-4">

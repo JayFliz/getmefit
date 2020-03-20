@@ -1,9 +1,7 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Firebase Authentication`,
+    title: `GetMeFit Beta`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
