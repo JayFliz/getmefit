@@ -8,7 +8,7 @@ module.exports = {
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/*`] }
+      options: { prefixes: [`/app/*`] }
     },
     {
       resolve: "gatsby-plugin-firebase",
