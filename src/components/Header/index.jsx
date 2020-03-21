@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
 const Header = () => (
   <nav className="w-full flex items-center justify-between bg-blue-700 p-6">
@@ -7,7 +7,10 @@ const Header = () => (
       <span className="font-semibold text-xl">Get Me Fit Beta</span>
     </div>
     <div className="w-1/2 mt-1 text-md flex flex-row-reverse">
-      <Link to="/app/profile" className="block text-white hover:text-grey-500 mr-4">
+      <Link
+        to="/app/profile"
+        className="block text-white hover:text-grey-500 mr-4"
+      >
         Profile
       </Link>
       <Link to="/" className="block text-white hover:text-grey-500 mr-4">
@@ -15,6 +18,6 @@ const Header = () => (
       </Link>
     </div>
   </nav>
-)
+);
 
-export default Header
+export default Header;

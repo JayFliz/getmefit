@@ -1,14 +1,8 @@
-import React from "react"
-import View from "./View"
+import React from "react";
+import View from "./View";
 
 const Profile = () => {
+  return <View title="Profile page">This is a profile page</View>;
+};
 
-  return (
-    <View title="Profile page">
-      This is a profile page
-    </View>
-  );
-
-}
-
-export default Profile
+export default Profile;
