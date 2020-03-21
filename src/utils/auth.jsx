@@ -1,4 +1,4 @@
-export const isBrowser = () => typeof window !== "undefined";
+import { isBrowser } from './helpers';
 
 export const getUser = () =>
   isBrowser() && window.localStorage.getItem("user")

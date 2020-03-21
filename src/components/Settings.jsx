@@ -3,8 +3,6 @@ import ViewBox from "./View/ViewBox";
 import { getUser } from "../utils/auth";
 import firebase from "gatsby-plugin-firebase";
 
-const firestore = firebase.firestore();
-
 const Profile = () => {
   const usernameInputEl = createRef();
   const nameInputEl = createRef();
@@ -13,7 +11,7 @@ const Profile = () => {
   const { displayName, email, emailVerified, uid } = user;
   const accessToken = user.stsTokenManager.accessToken;
   const [extraData, setExtraData] = React.useState({});
-  const fireUserRef = firestore.doc("/users/" + uid);
+  const fireUserRef = firebase.firestore().doc("/users/" + uid);
 
   // console.log('')
 
@@ -22,10 +20,6 @@ const Profile = () => {
       setExtraData(usrData.data() || {});
     });
   }, [fireUserRef]);
-
-  console.log("this is extradata", extraData);
-
-  console.log("what is firebase");
 
   const updateName = () => {
     // console.log('save this value', nameInputEl.current.value);
@@ -36,7 +30,7 @@ const Profile = () => {
     });
 
     // TODO: check if username already exists before overriding
-    firestore.doc("/usernames/" + nameInputEl.current.value).set({
+    firebase.firestore().doc("/usernames/" + nameInputEl.current.value).set({
       uid: uid
     });
   };
