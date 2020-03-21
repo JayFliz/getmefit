@@ -6,10 +6,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/app/*`] }
-    },
+    `gatsby-plugin-netlify`,
     {
       resolve: "gatsby-plugin-firebase",
       options: {

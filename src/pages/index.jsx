@@ -1,34 +1,24 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Router } from "@reach/router";
 import Layout from "../components/Layout";
-import View from "../components/View";
+import Settings from "../components/Settings";
+import Login from "../components/Login";
+import Home from "../components/Home";
+import Profile from "../components/Profile";
+import PrivateRoute from "../components/PrivateRoute";
+import NotFound from "../components/NotFound";
 import Status from "../components/Status";
 
 const Index = () => (
   <Layout>
     <Status />
-    <View title="Get Me Fit">
-      <p>
-        <span role="img" aria-label="wave">
-          👋
-        </span>{" "}
-        Hello There
-        <br />
-        Group Fitness Instructor & Personal Trainer Profiles
-      </p>
-      <br />
-      <br />
-      <p>
-        This is the public home, and here it is a private route to start:
-        <br />
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right"
-          type="button"
-        >
-          <Link to="/app/profile">Go to your profile</Link>
-        </button>
-      </p>
-    </View>
+    <Router>
+      <Home path="/" />
+      <PrivateRoute path="/app/profile" component={Settings} />
+      <Login path="/app/login" />
+      <Profile path="/user/:userId" component={Profile} />
+      <NotFound default component={NotFound} />
+    </Router>
   </Layout>
 );
 
